@@ -1,0 +1,74 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Serverless application to manage game sessions
+
+Globals:
+  Function:
+    Timeout: 10
+
+Resources:
+  GameSessionTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: GameSessions
+      AttributeDefinitions:
+        - AttributeName: sessionId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: sessionId
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+
+  CreateGameSessionFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: createSession.lambdaHandler
+      Runtime: nodejs20.x
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref GameSessionTable
+      Events:
+        CreateGameSession:
+          Type: Api
+          Properties:
+            Path: /sessions
+            Method: post
+
+  ListGameSessionsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: listSessions.lambdaHandler
+      Runtime: nodejs20.x
+      Architectures:
+        - x86_64
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref GameSessionTable
+      Events:
+        ListGameSessions:
+          Type: Api
+          Properties:
+            Path: /sessions
+            Method: get
+
+Outputs:
+  CreateGameSessionApi:
+    Description: "API Gateway endpoint URL for creating a game session"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/sessions/"
+    
+  ListGameSessionsApi:
+    Description: "API Gateway endpoint URL for listing game sessions"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/sessions/"
+  
+  CreateGameSessionFunction:
+    Description: "Create Game Session Lambda Function ARN"
+    Value: !GetAtt CreateGameSessionFunction.Arn
+  
+  ListGameSessionsFunction:
+    Description: "List Game Sessions Lambda Function ARN"
+    Value: !GetAtt ListGameSessionsFunction.Arn
