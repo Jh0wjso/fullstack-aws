@@ -26,8 +26,6 @@ Resources:
       CodeUri: src/
       Handler: createSession.lambdaHandler
       Runtime: nodejs20.x
-      Architectures:
-        - x86_64
       Environment:
         Variables:
           TABLE_NAME: !Ref GameSessionTable
@@ -44,8 +42,6 @@ Resources:
       CodeUri: src/
       Handler: listSessions.lambdaHandler
       Runtime: nodejs20.x
-      Architectures:
-        - x86_64
       Environment:
         Variables:
           TABLE_NAME: !Ref GameSessionTable
