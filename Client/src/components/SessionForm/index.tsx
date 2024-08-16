@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createSession } from '../../services/api';
+import './styles.css';
 
 const SessionForm: React.FC = () => {
   const [hostname, setHostname] = useState('');
@@ -13,13 +14,14 @@ const SessionForm: React.FC = () => {
       await createSession({ hostname, players, map, mode });
       alert('Sessão criada com sucesso!');
     } catch (error) {
-      console.error('Erro ao criar a sessão:', error);
+      alert('Erro ao criar sessão!' + error);
+      console.error(error);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form onSubmit={handleSubmit} className="createSessionForm">
+      <div className='formInput'>
         <label>Hostname:</label>
         <input
           type="text"
@@ -28,7 +30,7 @@ const SessionForm: React.FC = () => {
           required
         />
       </div>
-      <div>
+      <div className='formInput'>
         <label>Players:</label>
         <input
           type="number"
@@ -38,7 +40,7 @@ const SessionForm: React.FC = () => {
           required
         />
       </div>
-      <div>
+      <div className='formInput'>
         <label>Map:</label>
         <input
           type="text"
@@ -47,7 +49,7 @@ const SessionForm: React.FC = () => {
           required
         />
       </div>
-      <div>
+      <div className='formInput'>
         <label>Mode:</label>
         <input
           type="text"
