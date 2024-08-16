@@ -2,9 +2,9 @@
     /*Full Screen, 100% of the viewport height, all centered*/
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    /*Width full screen*/
+    /*Max Width full screen*/
+    min-width: 98vw;
+    max-width: 100%;
     /*Background color*/
 }

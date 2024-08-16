@@ -28,9 +28,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   font-size: 1.2em;
-  width: 100%;
 }
 
 h1 {
@@ -45,12 +43,16 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #5e0392;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: #370e4e;
 }
 button:focus,
 button:focus-visible {
