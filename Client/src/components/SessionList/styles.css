@@ -1,0 +1,58 @@
+.sessionListTable{
+    width: 201vh;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #dfe2e8;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: center;
+}
+
+.thead-dark{
+    background-color: #5e0392;
+    color: #ffffff;
+}
+
+.tableHeader{
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 0;
+}
+
+.tableHeader th{
+    padding: 5px 0;
+}
+
+.tableBody{
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 0;    
+}
+
+.tableRow{
+    border-bottom: 1px solid #dfe2e8;
+}
+
+.tableRow:hover{
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.tableRow td{
+    padding: 5px 0;
+    color: #000000;
+    font-weight: 600;
+}
+
+/*Last row of the table*/
+.tableRow:last-child{
+    border-bottom: none;
+}
