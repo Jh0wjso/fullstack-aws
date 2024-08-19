@@ -25,7 +25,8 @@ export const lambdaHandler = async () => {
         console.error(err);
         return {
             statusCode: 500,
-            body: JSON.stringify({ message: "Could not retrieve game sessions" })
+            body: JSON.stringify({ message: "Could not retrieve game sessions", error: err })
+            
         };
     }
 };

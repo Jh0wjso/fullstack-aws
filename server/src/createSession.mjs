@@ -28,7 +28,7 @@ export const lambdaHandler = async (event) => {
         console.error(err);
         return {
             statusCode: 500,
-            body: JSON.stringify({ message: "Could not create game session" })
+            body: JSON.stringify({ message: "Could not create game session", error: err })
         };
     }
 };
