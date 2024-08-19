@@ -3,14 +3,14 @@
 
 ## Overview
 
-Welcome to the Game Fullstack Project! This project is designed to help you explore full-stack development by building a complete application from front-end to back-end. You'll be working on two main components:
+Welcome to the Fullstack Project! This project is designed to help you explore full-stack development by building a complete application from front-end to back-end. You'll be working on two main components:
 
 - A front-end application using **React** and **Vite**.
 - A back-end application using **AWS Serverless Application Model (SAM)**.
 
 ### Objective
 
-Your task is to create a form on the front-end that allows users to create a new game session. This session will be persisted in a DynamoDB table through a RESTful API developed in the back-end. Once a session is created, the user will be redirected to a list of all game sessions.
+Your task is to create a form on the front-end that allows users to create a new session. This session will be persisted in a DynamoDB table through a RESTful API developed in the back-end. Once a session is created, the user will be redirected to a list of all sessions.
 
 ## General Guidelines
 
@@ -26,20 +26,20 @@ Your task is to create a form on the front-end that allows users to create a new
 
 Develop a **React** application using **Vite** that includes:
 
-- A form for creating new game sessions.
-- A list view to display all created game sessions.
+- A form for creating new   sessions.
+- A list view to display all created   sessions.
 - Integration with the back-end to persist session data.
 
 ### Requirements
 
 #### Form
 
-- Collect the following details for each game session: hostname, number of players, map, and mode.
+- Collect the following details for each   session: hostname, number of players, map, and mode.
 - On form submission, send a POST request to the back-end API to create the session.
 
 #### List View
 
-- Fetch and display a list of all game sessions from the back-end API.
+- Fetch and display a list of all   sessions from the back-end API.
 - Display details such as hostname, players, map, and mode.
 
 #### User Experience (UX/UI)
@@ -61,18 +61,18 @@ Develop a **React** application using **Vite** that includes:
 
 ### Objective
 
-Develop an AWS Serverless application using SAM that provides a RESTful API for managing game sessions.
+Develop an AWS Serverless application using SAM that provides a RESTful API for managing   sessions.
 
 ### Requirements
 
 #### RESTful API
 
-- Implement endpoints for creating and retrieving game sessions.
+- Implement endpoints for creating and retrieving   sessions.
 - Use **AWS API Gateway**, **AWS Lambda**, and **DynamoDB**.
 
-#### Game Session Persistence
+####   Session Persistence
 
-- Store game session data in a DynamoDB table with the following fields: `sessionId` (UUID), `hostname`, `players`, `map`, and `mode`.
+- Store   session data in a DynamoDB table with the following fields: `sessionId` (UUID), `hostname`, `players`, `map`, and `mode`.
 
 #### Adherence to REST Principles
 
@@ -89,17 +89,17 @@ Develop an AWS Serverless application using SAM that provides a RESTful API for 
 
 ### Example API Endpoints
 
-- **Create Game Session**: `POST /sessions`
+- **Create   Session**: `POST /sessions`
 
   ```json
   {
     "hostname": "<hostname>",
     "players": <number_of_players>,
-    "map": "<game_map>",
-    "mode": "<game_mode>"
+    "map": "< _map>",
+    "mode": "< _mode>"
   }
   ```
-- **List Game Sessions**: `GET /sessions`
+- **List   Sessions**: `GET /sessions`
 
 ### Submission Guidelines
 
